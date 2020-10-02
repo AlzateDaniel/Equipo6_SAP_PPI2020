@@ -1,0 +1,45 @@
+h1 {
+    text-align: center;
+    color: black;
+}
+
+.contenedor {
+    align-content: center;
+    padding-bottom: 60px;
+   
+}
+ 
+.textoFooter {
+    padding-top: 40px;
+
+}
+
+#Algunos{
+    padding-bottom:20px;
+}
+
+.Parrafo {
+    color: blanchedalmond;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 140%;
+    font-weight: normal;
+    text-align: center;
+}
+
+.Contparrafo {
+    margin-bottom:10%;
+    margin-left:10% ;
+    background: gray;
+    width: 80%;
+    border: 2px solid black;    
+}
+
+#textoprueba {
+    text-align: center;
+}
+
+
+
+
+
+
