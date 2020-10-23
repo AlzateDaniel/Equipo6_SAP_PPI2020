@@ -1,6 +1,6 @@
 import React from "react";
-import "../Estilos.css";
-import imagenes from "../assets/imagenes";
+import "../../Estilos.css";
+import imagenes from "../../assets/imagenes";
 import { Link } from "react-router-dom";
 
 function Logoinicio() {
@@ -13,7 +13,7 @@ function Logoinicio() {
       <br />
       <br />
       <br />
-      <Link to="/InicioCliente/Iniciocliente">
+      <Link to="/Logoinicio">
         <img
           src={imagenes.img27}
           alt="..."

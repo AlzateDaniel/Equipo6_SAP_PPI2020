@@ -2,35 +2,33 @@ import React from 'react';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 
 import '../Estilos.css'
+import { useFirebaseApp } from 'reactfire';
 
 //inicioLogo
-import Logoinicio from '../components/Logoinicio';
-
-//Inicio Cliente
-import Iniciocliente from '../components/InicioCliente/Iniciocliente';
-import Registro from '../components/InicioCliente/Registro';
-import Quienessomos from '../components/InicioCliente/Quienessomos'; 
+import Logoinicio from '../components/Inicio/Logoinicio';
+import Logoinicio2 from '../components/Inicio/Logoinicio2';
+import Registro from '../components/Inicio/Registro';
 
 //Inicio usuario
-import InicioPerfil from '../components/InicioUsuario/InicioPerfil';
-import Quienessomos2 from '../components/InicioUsuario/Quienessomos2';
-import Salud from '../components/InicioUsuario/Salud'
-import Apariencia from '../components/InicioUsuario/Apariencia';
-import Barberos from '../components/InicioUsuario/Barberos';
-import Masajistas from '../components/InicioUsuario/Masajistas';
-import Agenda from '../components/InicioUsuario/Agenda';
+import InicioPerfil from '../components/inicioUsuario/InicioPerfil';
+import Quienessomos2 from '../components/inicioUsuario/Quienessomos2';
+import Salud from '../components/inicioUsuario/Salud'
+import Apariencia from '../components/inicioUsuario/Apariencia';
+import Barberos from '../components/inicioUsuario/Barberos';
+import Masajistas from '../components/inicioUsuario/Masajistas';
+import Agenda from '../components/inicioUsuario/Agenda';
 
-import Login from '../Login';
-
-
+import Login from '../containers/Login';
 
 
 function App() {
+  const firebase = useFirebaseApp();
+  console.log(firebase); 
+
   return (
     <Router>
     <div>   
@@ -38,20 +36,17 @@ function App() {
          <Route exact path="/">
              <Logoinicio/>
            </Route>
-            
-           <Route path="/Iniciocliente">
-             <Iniciocliente/>
+           <Route path="/Logoinicio">
+             <Logoinicio2/>
            </Route>
            <Route path="/Registro">
              <Registro/>
-           </Route>
+             
+           </Route>         
            <Route path="/Login">
              <Login/>
            </Route>
-           <Route path="/Quienessomos">
-              <Quienessomos/>
-           </Route>
-
+        
            <Route path="/InicioPerfil">
               <InicioPerfil/>
            </Route>

@@ -1,31 +1,59 @@
 import React from "react";
-import'../../Estilos.css';
+import "../../Estilos.css";
 import imagenes from "../../assets/imagenes";
-import {Link} from 'react-router-dom';
+import { Link } from "react-router-dom";
+
+import Login from '../../containers/Login';
+import AppBar from '@material-ui/core/Toolbar';
+
+import ExitToApp from '@material-ui/icons/ExitToApp';
+import IconButton from '@material-ui/core/IconButton';
+
+import "firebase/auth";
+import { useFirebaseApp, useUser } from "reactfire";
+
 
 function InicioPerfil() {
+
+  const firebase = useFirebaseApp();
+  const user = useUser();
+
+  const cerrarSesion = async () => {
+    await firebase.auth().signOut();
+  };
+
+  
   return (
     <div>
       <header>
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-          <Link className="navbar-brand text-primary" to="/InicioPerfil">BeautyServices </Link>
+        <AppBar position="static" className="navbar navbar-expand-lg navbar-dark bg-dark">
+          <Link className="navbar-brand text-primary" to="/Perfil">
+             <Login/>
+          </Link>
           <button
-            className="navbar-toggler"
+            className="navbar-toggler btn-lg"
             type="button"
             data-toggle="collapse"
             data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent"
             aria-expanded="false"
-            aria-label="Toggle navigation">  
+            aria-label="Toggle navigation"
+          >
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item active">
-              <Link className="nav-link text-light" to="/InicioPerfil"> Inicio <span className="sr-only">(current)</span> </Link>
+                <Link className="nav-link text-light" to="/InicioPerfil">
+                  {" "}
+                  Inicio <span className="sr-only">(current)</span>{" "}
+                </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link text-light" to="/Quienessomos2"> Quiénes Somos </Link>
+                <Link className="nav-link text-light" to="/Quienessomos2">
+                  {" "}
+                  Quiénes Somos{" "}
+                </Link>
               </li>
               <li className="nav-item dropdown text-light">
                 <a
@@ -35,10 +63,18 @@ function InicioPerfil() {
                   role="button"
                   data-toggle="dropdown"
                   aria-haspopup="true"
-                  aria-expanded="false">Servicios</a>
+                  aria-expanded="false"
+                >
+                  Servicios
+                </a>
                 <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <Link className="dropdown-item" to="/Salud"> Salud </Link>
-                <Link className="dropdown-item" to="/Apariencia">Apariencia</Link>
+                  <Link className="dropdown-item" to="/Salud">
+                    {" "}
+                    Salud{" "}
+                  </Link>
+                  <Link className="dropdown-item" to="/Apariencia">
+                    Apariencia
+                  </Link>
 
                   <div className="dropdown-divider"></div>
                 </div>
@@ -53,10 +89,19 @@ function InicioPerfil() {
               ></input>
               <button
                 className="btn btn-outline-light my-2 my-sm-0 mx-2 col-3 "
-                type="submit"> Buscar </button>
+                type="submit"
+              >
+                {" "}
+                Buscar{" "}
+              </button>
             </form>
+            <div>
+            {user && (
+               <IconButton onClick={cerrarSesion} > <Link to="/"> <ExitToApp/> </Link> </IconButton> 
+            )}
+            </div>
           </div>
-        </nav>
+        </AppBar>
         <div
           id="carouselExampleControls"
           className="carousel slide"
@@ -111,7 +156,7 @@ function InicioPerfil() {
           </a>
         </div>
       </header>
-      <hr/>
+      <hr />
       <main>
         <h1 className="text-center text-center my-5">
           <small>
@@ -119,8 +164,10 @@ function InicioPerfil() {
             te complacemos y mucho mas.
           </small>
         </h1>
-        <hr/>
-        <h1 id="Algunos" className="text-primary text-center my-4">Algunos Servicios</h1>
+        <hr />
+        <h1 id="Algunos" className="text-primary text-center my-4">
+          Algunos Servicios
+        </h1>
         <div class="card-columns">
           <div className="container text-center">
             <div className="card">
@@ -134,7 +181,9 @@ function InicioPerfil() {
                 <p className="card-text">
                   Solicita el servicio de barberia y agenda tu cita{" "}
                 </p>
-                <Link to="/Barberos" className="btn btn-dark text-white">Solicitar barbero </Link>
+                <Link to="/Barberos" className="btn btn-dark text-white">
+                  Solicitar barbero{" "}
+                </Link>
               </div>
             </div>
             <div className="card">
@@ -149,7 +198,9 @@ function InicioPerfil() {
                   {" "}
                   Solicita el servicio de Manicure y agenda tu cita{" "}
                 </p>
-                <Link to="/Manicuristas" className="btn btn-dark text-white">Solicitar manicurista </Link>
+                <Link to="/Manicuristas" className="btn btn-dark text-white">
+                  Solicitar manicurista{" "}
+                </Link>
               </div>
             </div>
             <div className="card">
@@ -165,7 +216,9 @@ function InicioPerfil() {
                   Solicita el servicio de Trainning personal y contactese con el
                   asesor{" "}
                 </p>
-                <Link to="/Entrenadores" className="btn btn-dark text-white">Solicitar entrenador/a </Link>
+                <Link to="/Entrenadores" className="btn btn-dark text-white">
+                  Solicitar entrenador/a{" "}
+                </Link>
               </div>
             </div>
             <div className="card">
@@ -180,7 +233,9 @@ function InicioPerfil() {
                   {" "}
                   Solicita el servicio de Masajes y agenda tu cita{" "}
                 </p>
-                <Link to="/Masajistas" className="btn btn-dark text-white">Solicitar masajista </Link>
+                <Link to="/Masajistas" className="btn btn-dark text-white">
+                  Solicitar masajista{" "}
+                </Link>
               </div>
             </div>
             <div className="card">
@@ -195,16 +250,20 @@ function InicioPerfil() {
                   {" "}
                   Solicita el servicio de un Nutriologo y contactese con el
                 </p>
-                <Link to="/Nutricionistas" className="btn btn-dark text-white">Solicitar nutriologo </Link>
+                <Link to="/Nutricionistas" className="btn btn-dark text-white">
+                  Solicitar nutriologo{" "}
+                </Link>
               </div>
             </div>
           </div>
         </div>
       </main>
-      <hr/>
+      <hr />
       <footer>
         <div className="copyright bg-dark text-white text-center">
-          <p className="textoFooter">Todos los derechos reservados ©2020-2021</p>
+          <p className="textoFooter">
+            Todos los derechos reservados ©2020-2021
+          </p>
           <i className="fab fa-instagram fa-2x"></i> &nbsp;&nbsp;
           <i className="fab fa-twitter fa-2x"></i> &nbsp;&nbsp;
           <i className="fab fa-facebook-square fa-2x"></i> &nbsp;&nbsp;
