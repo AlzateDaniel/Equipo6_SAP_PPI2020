@@ -3,6 +3,7 @@ import "../../Estilos.css";
 import imagenes from "../../assets/imagenes";
 import { Link } from "react-router-dom";
 
+
 function Logoinicio() {
   return (
     <div className="cuerpo">
@@ -13,7 +14,7 @@ function Logoinicio() {
       <br />
       <br />
       <br />
-      <Link to="/Logoinicio">
+      <Link to="/Logoinicio2">
         <img
           src={imagenes.img27}
           alt="..."
