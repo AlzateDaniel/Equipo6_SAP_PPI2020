@@ -11,7 +11,7 @@ const AuthElements =  function (props) {
         if (props.user) return (
             [<Avatar src={props.user.providerData[0].photoURL}/>]
         );
-        return <Button variant="outlined" onClick={props.login}> <div className="mr-2"><FcGoogle /> </div> Iniciar con Google</Button>
+        return <Button fullWidth variant="outlined" size="large" onClick={props.login}> <div className="mr-1"> <FcGoogle /> </div> Iniciar con Google</Button>
     }
         return ( 
             <div>

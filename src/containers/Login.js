@@ -17,13 +17,14 @@ class Login extends Component {
         console.log(this.props.token);
     }
 
-
-    login () {
+     login () {
         let provider = new firebase.auth.GoogleAuthProvider();
 
         firebase.auth().signInWithPopup(provider).then(result =>{
          let token = result.credential.accessToken;
          this.props.saveToken(token);
+         alert ('Bienvenido a BeautyServices');
+         this.props.history.push('/InicioPerfil');
         }).catch (err =>{
             console.log(err);
         })
