@@ -27,9 +27,9 @@ function InicioPerfil() {
     <div>
       <header>
         <AppBar position="static" className="navbar navbar-expand-lg navbar-dark bg-dark">
-          <Link className="navbar-brand text-primary" to="/Perfil">
+       
              <Login/>
-          </Link>
+          
           <button
             className="navbar-toggler btn-lg"
             type="button"

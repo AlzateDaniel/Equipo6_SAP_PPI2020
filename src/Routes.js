@@ -12,6 +12,7 @@ import Registro from './components/Inicio/Registro';
 
 import IniciarSesion from './containers/IniciarSesion';
 import Registrarme from './containers/Registrarme';
+import Perfil from './containers/Perfil';
 
 //Inicio usuario
 import InicioPerfil from './components/inicioUsuario/InicioPerfil';
@@ -33,6 +34,7 @@ const Routes = () => (
           
           <Route path="/IniciarSesion" component={IniciarSesion}/>  
           <Route path="/Registrarme" component={Registrarme}/>  
+          <Route path="/Perfil" component={Perfil}/>  
 
           <Route path="/InicioPerfil" component={InicioPerfil}/>  
           <Route path="/Quienessomos2"component={Quienessomos2}/>  

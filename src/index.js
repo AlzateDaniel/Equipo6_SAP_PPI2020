@@ -6,7 +6,6 @@ import { FirebaseAppProvider } from 'reactfire';
 import { Provider } from 'react-redux';
 
 import firebase from './initializers/firebase';
-
 import store from './initializers/store';
 import { setUser, clearUser } from './initializers/actions';
 

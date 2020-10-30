@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
@@ -10,13 +9,14 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import LoockOutlined from '@material-ui/icons/LockOutlined';
 
 import Alert from './Alert';
 
 import firebase from 'firebase/app';
 import 'firebase/database';
 import 'firebase/auth';
+
+import Login from './Login';
 
 const MyLink = React.forwardRef((props, ref) => (<RouterLink innerRef={ref} {...props} /> ));
 
@@ -40,7 +40,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const IniciarSesion = (props) => {
+
+const Perfil = (props) => {
+
   const classes = useStyles();
 
   const [user, setUser] = useState({
@@ -71,18 +73,31 @@ const handleLogin = (e) =>{
   })
 };
 
+useEffect(() => { 
+  if (firebase.auth().currentUser){
+    //Leer Datos
+    firebase.database()
+    .ref(`/users/${firebase.auth().currentUser.uid}`)
+    .once('value')
+    .then(snapshot => {
+      setUser(snapshot.val());
+    });
+  } else {
+    props.history.push('/IniciarSesion');
+  }
+}, []);
 
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
-          <LoockOutlined/>
-        </Avatar>
         <Typography component="h1" variant="h5">
-           Ingresar a BeautyServices
+           Mi Perfil
         </Typography>
         <form className={classes.form} onSubmit={handleLogin}>
+          <Grid container justify="center" alignItems="center" direction="column"> 
+             <Login/>
+          </Grid>
           <TextField
             variant="outlined"
             margin="normal"
@@ -134,4 +149,4 @@ const handleLogin = (e) =>{
   );
 }
 
-export default withRouter (IniciarSesion);
+export default withRouter (Perfil);

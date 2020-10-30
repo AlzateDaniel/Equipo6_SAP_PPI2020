@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Login from './Login';
 
+import { FcGoogle } from "react-icons/fc";
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -12,6 +12,8 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+
+import Alert from './Alert';
 
 import firebase from 'firebase/app';
 import 'firebase/database';
@@ -54,6 +56,8 @@ const Registrarme = (props) => {
      password:''
   });
 
+ const [alertMessage, setAlertMessage ] = useState(null);
+
  const handleChange = (e) => {
      setUser({
        ...user,
@@ -61,20 +65,54 @@ const Registrarme = (props) => {
      })
  };
 
+
+ //Create user with GOOGLE
+ const LoginGoogle = () => {
+  let provider = new firebase.auth.GoogleAuthProvider();
+  firebase.auth().signInWithPopup(provider)
+   .then(response =>{
+      //Guardar los datos del usuario
+      delete user.password;
+      firebase.database().ref(`/users/${response.user.uid}`).set(user);
+      //Alert Mensaje
+        setAlertMessage({
+          type: 'succes',
+          message: 'Bienvenido a BeautyServices'
+        });
+      props.history.push('/InicioPerfil');
+  }).catch (error =>{
+      console.log(error);
+      setAlertMessage({
+        type: 'error',
+        message: error.message
+      });
+  })
+ };
+
+
+ //Create User with email and password
  const handleSubmit = (e) =>{
    e.preventDefault();
-
+   setAlertMessage(null);
    firebase.auth().createUserWithEmailAndPassword(user.email, user.password)
     .then((response) => {
         //Guardar los datos del usuario
         delete user.password;
         firebase.database().ref(`/users/${response.user.uid}`).set(user);
-        alert ('Bienvenido a BeautyServices')
+        //Alert Mensaje
+        setAlertMessage({
+          type: 'succes',
+          message: 'Bienvenido a BeautyServices'
+        });
         props.history.push('/InicioPerfil');
     })
       .catch(error => {
         console.log(error);
-        alert(error.message);
+        setAlertMessage({
+          type: 'error',
+          message: error.message
+        });
+     
       }); 
  };
 
@@ -94,7 +132,7 @@ const Registrarme = (props) => {
                 <form id="registro">
                   <div className="form">
                     <label for="inputEmail">Registro con google</label>
-                    <Login/>
+                    <Button fullWidth variant="outlined" size="large" onClick={LoginGoogle}> <div className="mr-1"> <FcGoogle /> </div> Iniciar con Google</Button>
                   </div>
                 </form>
               </div>
@@ -174,6 +212,9 @@ const Registrarme = (props) => {
           </Grid>
         </form>
       </div>
+      {alertMessage && 
+         <Alert type={alertMessage.type} message={alertMessage.message} autoclose={3000} />
+      }
     </Container>
   );
 }
