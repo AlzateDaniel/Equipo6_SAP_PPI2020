@@ -15,13 +15,13 @@ import Registrarme from './containers/Registrarme';
 import Perfil from './containers/Perfil';
 
 //Inicio usuario
-import InicioPerfil from './components/inicioUsuario/InicioPerfil';
-import Quienessomos2 from './components/inicioUsuario/Quienessomos2';
-import Salud from './components/inicioUsuario/Salud'
-import Apariencia from './components/inicioUsuario/Apariencia';
-import Barberos from './components/inicioUsuario/Barberos';
-import Masajistas from './components/inicioUsuario/Masajistas';
-import Agenda from './components/inicioUsuario/Agenda';
+import InicioPerfil from './components/InicioUsuario/InicioPerfil';
+import Quienessomos2 from './components/InicioUsuario/Quienessomos2';
+import Salud from './components/InicioUsuario/Salud'
+import Apariencia from './components/InicioUsuario/Apariencia';
+import Barberos from './components/InicioUsuario/Barberos';
+import Masajistas from './components/InicioUsuario/Masajistas';
+import Agenda from './components/InicioUsuario/Agenda';
 
 
 const Routes = () => (
