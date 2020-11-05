@@ -1,5 +1,4 @@
 import React from "react";
-import "../../Estilos.css";
 import imagenes from "../../assets/imagenes";
 import { Link } from "react-router-dom";
 
@@ -7,6 +6,8 @@ import { Link } from "react-router-dom";
 function Logoinicio() {
   return (
     <div className="cuerpo">
+      <br />
+      <br />
       <br />
       <br />
       <br />

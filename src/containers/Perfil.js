@@ -16,7 +16,7 @@ import firebase from 'firebase/app';
 import 'firebase/database';
 import 'firebase/auth';
 
-import Login from './Login';
+import Loginn from './copy/Loginn';
 
 const MyLink = React.forwardRef((props, ref) => (<RouterLink innerRef={ref} {...props} /> ));
 
@@ -38,6 +38,9 @@ const useStyles = makeStyles((theme) => ({
   submit: {
     margin: theme.spacing(3, 0, 2),
   },
+  space: {
+    marginTop:'10px'
+  }
 }));
 
 
@@ -46,11 +49,13 @@ const Perfil = (props) => {
   const classes = useStyles();
 
   const [user, setUser] = useState({
+    name:'',
+    apellido:'',
     email:'',
-    password:''
  });
 
- const [errorMessage, setErrorMessage ] = useState('');
+ const [alertMessage, setAlertMessage ] = useState(null);
+
 
  const handleChange = (e) => {
   setUser({
@@ -59,18 +64,21 @@ const Perfil = (props) => {
   })
 };
 
-const handleLogin = (e) =>{
+const handleSubmit = (e) =>{
   e.preventDefault();
-  setErrorMessage('');
 
-  firebase.auth().signInWithEmailAndPassword(user.email, user.password)
-  .then(() => {
-    props.history.push('/InicioPerfil');
+  setAlertMessage(null);
+  const { currentUser } = firebase.auth();
+  firebase.database().ref(`/users/${currentUser.uid}`)
+  .update(user)
+  .then(response => {
+    setAlertMessage({type: 'succes', text: 'Perfil actualizado'});
   })
-  .catch (error => {
-    console.log(error);
-    setErrorMessage(error.message);
-  })
+  .catch(error =>{
+    setAlertMessage({type: 'error', text: error.message});
+  });
+
+  
 };
 
 useEffect(() => { 
@@ -94,36 +102,50 @@ useEffect(() => {
         <Typography component="h1" variant="h5">
            Mi Perfil
         </Typography>
-        <form className={classes.form} onSubmit={handleLogin}>
-          <Grid container justify="center" alignItems="center" direction="column"> 
-             <Login/>
+        <form className={classes.form} onSubmit={handleSubmit}>
+          <Grid alignItems="center" container justify="center" direction="column">
+            <Loginn/>
+            <span className={classes.space}></span>
           </Grid>
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            id="email"
-            label="Correo"
-            name="email"
-            autoComplete="email"
-            autoFocus
-            defaultValue={user.email}
-            onChange={handleChange}
-          />
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            name="password"
-            label="Contraseña"
-            type="password"
-            id="password"
-            autoComplete="current-password"
-            defaultValue={user.password}
-            onChange={handleChange}
-          />
+          <Grid container spacing={2}>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                autoComplete="fname"
+                name="name"
+                variant="outlined"
+                required
+                fullWidth
+                id="name"
+                label="Nombre"
+                autoFocus
+                onChange={handleChange}
+              />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
+                id="apellido"
+                label="Apellido"
+                name="apellido"
+                autoComplete="lname"
+                onChange={handleChange}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
+                id="email"
+                label="Correo"
+                name="email"
+                autoComplete="email"
+                onChange={handleChange}
+              />
+            </Grid>
+          </Grid>
           <Button
             type="submit"
             fullWidth
@@ -131,19 +153,19 @@ useEffect(() => {
             color="primary"
             className={classes.submit}
           >
-            Ingresar
+            Guardar Perfil
           </Button>
-          <Grid container>
+          <Grid container justify="flex-end">
             <Grid item>
-              <Link to="/Registrarme" component={MyLink} variant="body2">
-                {"¿No tienes una cuenta? ingresa aqui" }
+              <Link to="/InicioPerfil" component={MyLink} variant="body2">
+              {"Ir al Inicio" }
               </Link>
             </Grid>
           </Grid>
         </form>
       </div>
-      {errorMessage && 
-      <Alert type="error" message={errorMessage} autoclose={3000} />
+      {alertMessage && 
+         <Alert type={alertMessage.type} message={alertMessage.message} autoclose={3000} />
       }
     </Container>
   );

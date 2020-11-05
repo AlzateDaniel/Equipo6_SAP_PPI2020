@@ -7,9 +7,6 @@ import { Link } from "react-router-dom";
 //Importat React-Iconos
 import { GoArrowRight, GoPerson } from "react-icons/go";
 
-//Importar Modal
-import Modal from "react-modal";
-Modal.setAppElement("#root");
 
 const Registro = () => {
   return (

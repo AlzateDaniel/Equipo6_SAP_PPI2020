@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+import { FcGoogle } from "react-icons/fc";
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -48,6 +49,9 @@ const IniciarSesion = (props) => {
     password:''
  });
 
+ 
+ const [alertMessage, setAlertMessage ] = useState(null);
+
  const [errorMessage, setErrorMessage ] = useState('');
 
  const handleChange = (e) => {
@@ -70,6 +74,28 @@ const handleLogin = (e) =>{
     setErrorMessage(error.message);
   })
 };
+
+
+const LoginGoogle = () => {
+  let provider = new firebase.auth.GoogleAuthProvider();
+  firebase.auth().signInWithPopup(provider)
+   .then(response =>{
+      //Guardar los datos del usuario
+      firebase.database().ref(`/users/${response.user.uid}`).set(user);
+      //Alert Mensaje
+        setAlertMessage({
+          type: 'succes',
+          message: 'Bienvenido a BeautyServices'
+        });
+      props.history.push('/InicioPerfil');
+  }).catch (error =>{
+      console.log(error);
+      setAlertMessage({
+        type: 'error',
+        message: error.message
+      });
+  })
+ };
 
 
   return (
@@ -118,6 +144,19 @@ const handleLogin = (e) =>{
           >
             Ingresar
           </Button>
+          <hr/>  
+          <div className="modal-body">
+                <form id="registro">
+                  <div className="form">
+                    <label for="inputEmail">Iniciar Sesion con google</label>
+                    <Button fullWidth
+                            variant="outlined"
+                            color="inherit"
+                            onClick={LoginGoogle}> <div className="mr-1"> <FcGoogle /> </div> Iniciar con Google 
+                    </Button> 
+                  </div>
+                </form>
+              </div>
           <Grid container>
             <Grid item>
               <Link to="/Registrarme" component={MyLink} variant="body2">
@@ -129,6 +168,9 @@ const handleLogin = (e) =>{
       </div>
       {errorMessage && 
       <Alert type="error" message={errorMessage} autoclose={3000} />
+      }
+       {alertMessage && 
+         <Alert type={alertMessage.type} message={alertMessage.message} autoclose={3000} />
       }
     </Container>
   );

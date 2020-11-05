@@ -53,7 +53,7 @@ const Registrarme = (props) => {
      name: '',
      apellido: '',
      email:'',
-     password:''
+     password:'',
   });
 
  const [alertMessage, setAlertMessage ] = useState(null);
@@ -72,7 +72,6 @@ const Registrarme = (props) => {
   firebase.auth().signInWithPopup(provider)
    .then(response =>{
       //Guardar los datos del usuario
-      delete user.password;
       firebase.database().ref(`/users/${response.user.uid}`).set(user);
       //Alert Mensaje
         setAlertMessage({
@@ -112,7 +111,7 @@ const Registrarme = (props) => {
           type: 'error',
           message: error.message
         });
-     
+
       }); 
  };
 
@@ -132,7 +131,7 @@ const Registrarme = (props) => {
                 <form id="registro">
                   <div className="form">
                     <label for="inputEmail">Registro con google</label>
-                    <Button fullWidth variant="outlined" size="large" onClick={LoginGoogle}> <div className="mr-1"> <FcGoogle /> </div> Iniciar con Google</Button>
+                    <Button fullWidth variant="outlined" size="large" onClick={LoginGoogle}> <div className="mr-1"> <FcGoogle /> </div> Registrarme con Google</Button>
                   </div>
                 </form>
               </div>
@@ -220,5 +219,3 @@ const Registrarme = (props) => {
 }
 
 export default withRouter (Registrarme);
-
-

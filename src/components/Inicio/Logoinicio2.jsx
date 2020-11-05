@@ -14,6 +14,9 @@ function Logoinicio2() {
       <br />
       <br />
       <br />
+      <br />
+      <br />
+      <br />
       <img
         src={imagenes.img27}
         alt="..."
