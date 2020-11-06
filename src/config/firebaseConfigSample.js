@@ -1,13 +1,13 @@
-const firebaseConfig = {
-    apiKey: "AIzaSyCDgK28oGLwDbHdkKHqyhbVPCLyuQUu3CI",
-    authDomain: "serviciosbelleza-12c7e.firebaseapp.com",
-    databaseURL: "https://serviciosbelleza-12c7e.firebaseio.com",
-    projectId: "serviciosbelleza-12c7e",
-    storageBucket: "serviciosbelleza-12c7e.appspot.com",
-    messagingSenderId: "753488747882",
-    appId: "1:753488747882:web:c2058dcfe41b1d7ac1d913",
-    measurementId: "G-SS0BZK9LWB"
+const firebaseConfigSample = {
+    apiKey: "AIzaSyD1oMkC386owM7ayHEoRHGL0F88YSwBm_I",
+    authDomain: "beautyservices-d4f83.firebaseapp.com",
+    databaseURL: "https://beautyservices-d4f83.firebaseio.com",
+    projectId: "beautyservices-d4f83",
+    storageBucket: "beautyservices-d4f83.appspot.com",
+    messagingSenderId: "504790479049",
+    appId: "1:504790479049:web:ae64ad7fbefbd156175d18",
+    measurementId: "G-ZZ79R1J67R"
 };
 
-export default firebaseConfig;
+export default firebaseConfigSample;
 
