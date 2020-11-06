@@ -2,12 +2,9 @@ import React from "react";
 import imagenes from "../../assets/imagenes";
 import "../../Estilos.css";
 
-import Header from "../../containers/Header";
-
 function Quienessomos() {
   return (
     <div>
-      <Header />
       <header>
         <div
           id="carouselExampleControls"

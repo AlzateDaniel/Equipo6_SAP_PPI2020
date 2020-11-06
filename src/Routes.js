@@ -1,50 +1,42 @@
 import React from 'react';
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route
-  } from "react-router-dom";
+import { Route, Switch } from 'react-router-dom';
 
-//inicioLogo
-import Logoinicio from './components/Inicio/Logoinicio';
-import Logoinicio2 from './components/Inicio/Logoinicio2';
-import Registro from './components/Inicio/Registro';
+import Login from './components/Login';
+import Signup from './components/Signup';
+import Chat from './components/Chat';
+import Profile from './components/Profile';
 
-import IniciarSesion from './containers/IniciarSesion';
-import Registrarme from './containers/Registrarme';
-import Perfil from './containers/Perfil';
+import Logoinicio from './pages/Inicio/Logoinicio';
+import Logoinicio2 from './pages/Inicio/Logoinicio2';
+import Registro from './pages/Inicio/Registro';
 
-//Inicio usuario
-import InicioPerfil from './components/InicioUsuario/InicioPerfil';
-import Quienessomos2 from './components/InicioUsuario/Quienessomos2';
-import Salud from './components/InicioUsuario/Salud'
-import Apariencia from './components/InicioUsuario/Apariencia';
-import Barberos from './components/InicioUsuario/Barberos';
-import Masajistas from './components/InicioUsuario/Masajistas';
-import Agenda from './components/InicioUsuario/Agenda';
-
+import inicioPerfil from './pages/InicioUsuario/InicioPerfil';
+import Quienessomos2 from './pages/InicioUsuario/Quienessomos2';
+import Salud from './pages/InicioUsuario/Salud';
+import Apariencia from './pages/InicioUsuario/Apariencia';
+import Barberos from './pages/InicioUsuario/Barberos';
+import Masajistas from './pages/InicioUsuario/Masajistas';
+import Agenda from './pages/InicioUsuario/Agenda';
 
 const Routes = () => (
+  <Switch>
+    <Route exact path="/" component={Logoinicio} />
+    <Route exact path="/userOempleado" component={Logoinicio2} />
+    <Route exact path="/registrooIniciar" component={Registro} />
 
-    <Router> 
-       <Switch>
-          <Route exact path="/" component={Logoinicio}/>  
-          <Route path="/Logoinicio2" component={Logoinicio2}/>  
-          <Route path="/Registro" component={Registro}/>  
-          
-          <Route path="/IniciarSesion" component={IniciarSesion}/>  
-          <Route path="/Registrarme" component={Registrarme}/>  
-          <Route path="/Perfil" component={Perfil}/>  
+    <Route exact path="/Chat" component={Chat} />
+    <Route exact path="/login" component={Login} />
+    <Route exact path="/signup" component={Signup} />
+    <Route exact path="/profile" component={Profile} />
 
-          <Route path="/InicioPerfil" component={InicioPerfil}/>  
-          <Route path="/Quienessomos2"component={Quienessomos2}/>  
-          <Route path="/Salud" component={Salud}/>  
-          <Route path="/Apariencia" component={Apariencia}/>  
-          <Route path="/Barberos" component={Barberos}/>  
-          <Route path="/Masajistas" component={Masajistas}/>  
-          <Route path="/Agenda" component={Agenda}/>  
-        </Switch>
-    </Router>
+    <Route exact path="/inicioPerfil" component={inicioPerfil}/>  
+    <Route exact path="/quienesSomos"component={Quienessomos2}/>  
+    <Route exact path="/salud" component={Salud}/>  
+    <Route exact path="/apariencia" component={Apariencia}/>  
+    <Route exact path="/barberos" component={Barberos}/>  
+    <Route exact path="/masajistas" component={Masajistas}/>  
+    <Route exact path="/agenda" component={Agenda}/>  
+  </Switch>
 );
 
 export default Routes;

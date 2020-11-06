@@ -1,10 +1,13 @@
 import React from "react";
-import "../../Estilos.css";
 import imagenes from "../../assets/imagenes";
-import { Link } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import { BsPerson } from "react-icons/bs";
 import { FaUserTie } from "react-icons/fa";
+
+import Link from '@material-ui/core/Link';
+import { Link as RouterLink, withRouter } from 'react-router-dom';
+
+const MyLink = React.forwardRef((props, ref) => <RouterLink innerRef={ref} {...props} />);
 
 function Logoinicio2() {
   return (
@@ -15,8 +18,7 @@ function Logoinicio2() {
       <br />
       <br />
       <br />
-      <br />
-      <br />
+
       <img
         src={imagenes.img27}
         alt="..."
@@ -25,14 +27,14 @@ function Logoinicio2() {
       <br />
 
       <div align="center">
-        <Link to="/Registro">
+        <Link to="/registrooIniciar" component={MyLink}>
           <Button className="mr-3" variant="outlined" color="primary">
             {" "}
             <BsPerson size="17px" /> Usuario{" "}
           </Button>
         </Link>
 
-        <Link to="/registroTrabajador">
+        <Link to="/registroTrabajador"  component={MyLink}>
           <Button variant="outlined" color="primary">
             {" "}
             <FaUserTie /> Trabajador{" "}
@@ -43,4 +45,4 @@ function Logoinicio2() {
   );
 }
 
-export default Logoinicio2;
+export default withRouter (Logoinicio2);

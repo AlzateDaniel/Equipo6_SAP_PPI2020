@@ -22,7 +22,7 @@ const useStyles = makeStyles({
     height: 84
   },
   bg: {
-    backgroundColor: '#ff5722'
+    backgroundColor: '#2271B3'
   }
 });
 

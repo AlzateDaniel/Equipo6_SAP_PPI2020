@@ -1,15 +1,18 @@
 import React from "react";
 import "../../Estilos.css";
 import imagenes from "../../assets/imagenes";
-import { Link } from "react-router-dom";
 
-import Header from "../../containers/Header";
+import Link from '@material-ui/core/Link';
+import { Link as RouterLink, withRouter } from 'react-router-dom';
 
-function Barberos() {
+const MyLink = React.forwardRef((props, ref) => <RouterLink innerRef={ref} {...props} />);
+
+
+function InicioPerfil() {
+
   return (
     <div>
-      <Header/>
-      <header>
+      <header> 
         <div
           id="carouselExampleControls"
           className="carousel slide"
@@ -18,21 +21,21 @@ function Barberos() {
           <div className="carousel-inner">
             <div className="carousel-item active">
               <img
-                src={imagenes.img18}
+                src={imagenes.img1}
                 className="d-block w-100"
                 alt="..."
               ></img>
             </div>
             <div className="carousel-item">
               <img
-                src={imagenes.img19}
+                src={imagenes.img2}
                 className="d-block w-100"
                 alt="..."
               ></img>
             </div>
             <div className="carousel-item ">
               <img
-                src={imagenes.img20}
+                src={imagenes.img3}
                 className="d-block w-100"
                 alt="..."
               ></img>
@@ -66,116 +69,107 @@ function Barberos() {
       </header>
       <hr />
       <main>
+        <h2 className="text-center text-center my-5">
+          <small>
+            Problemas con tu ¿apariencia? pide el servicio que quieras, nosotros
+            te complacemos y mucho mas.
+          </small>
+        </h2>
+        <hr />
         <h1 id="Algunos" className="text-primary text-center my-4">
-          Solicita el barbero que tu quieras
+          Algunos Servicios
         </h1>
-        <div className="card-columns">
+        <div class="card-columns">
           <div className="container text-center">
             <div className="card">
               <img
-                src={imagenes.img12}
+                src={imagenes.img4}
                 className="card-img-top img-fluid"
                 alt="..."
               ></img>
               <div className="card-body">
-                <h5 className="card-title">Michael Ross</h5>
-                <p className="card-text">"Descripcion personal del barbero" </p>
-                <p className="card-text"> 20.000$ </p>
-                <Link to="/Agenda" className="btn btn-dark text-white">
-                  {" "}
-                  Agendar tu cita{" "}
+                <h5 className="card-title">Barberia</h5>
+                <p className="card-text">
+                  Solicita el servicio de barberia y agenda tu cita{" "}
+                </p>
+                <Link to="/Barberos" component={MyLink} className="btn btn-dark text-white">
+                  Solicitar barbero{" "}
                 </Link>
               </div>
             </div>
             <div className="card">
               <img
-                src={imagenes.img17}
+                src={imagenes.img5}
                 className="card-img-top img-fluid"
                 alt="..."
               ></img>
               <div className="card-body">
-                <h5 className="card-title"> David Arango </h5>
+                <h5 className="card-title"> Manicure </h5>
                 <p className="card-text">
                   {" "}
-                  "Descripcion personal del barbero"{" "}
+                  Solicita el servicio de Manicure y agenda tu cita{" "}
                 </p>
-                <p className="card-text">45.000$ </p>
-                <Link to="/Agenda" className="btn btn-dark text-white">
-                  {" "}
-                  Agendar tu cita{" "}
+                <Link to="/Manicuristas" component={MyLink} className="btn btn-dark text-white">
+                  Solicitar manicurista{" "}
                 </Link>
               </div>
             </div>
             <div className="card">
               <img
-                src={imagenes.img14}
+                src={imagenes.img6}
                 className="card-img-top img-fluid"
                 alt="..."
               ></img>
               <div className="card-body">
-                <h5 className="card-title"> Harvy Specter</h5>
+                <h5 className="card-title">Entrenador/a Personal</h5>
                 <p className="card-text">
                   {" "}
-                  "Descripcion personal del barbero"{" "}
+                  Solicita el servicio de Trainning personal y contactese con el
+                  asesor{" "}
                 </p>
-                <p className="card-text"> 40.000$ </p>
-                <Link to="/Agenda" className="btn btn-dark text-white">
-                  {" "}
-                  Agendar tu cita{" "}
+                <Link to="/Entrenadores" component={MyLink} className="btn btn-dark text-white">
+                  Solicitar entrenador/a{" "}
                 </Link>
               </div>
             </div>
             <div className="card">
               <img
-                src={imagenes.img15}
+                src={imagenes.img7}
                 className="card-img-top img-fluid"
                 alt="..."
               ></img>
               <div className="card-body">
-                <h5 className="card-title">Louis Dior</h5>
-                <p className="card-text">"Descripcion personal del barbero" </p>
-                <p className="card-text"> 15.000$ </p>
-                <Link to="/Agenda" className="btn btn-dark text-white">
+                <h5 className="card-title">Masajista</h5>
+                <p className="card-text">
                   {" "}
-                  Agendar tu cita{" "}
+                  Solicita el servicio de Masajes y agenda tu cita{" "}
+                </p>
+                <Link to="/Masajistas" component={MyLink} className="btn btn-dark text-white">
+                  Solicitar masajista{" "}
                 </Link>
               </div>
             </div>
             <div className="card">
               <img
-                src={imagenes.img16}
+                src={imagenes.img8}
                 className="card-img-top img-fluid"
                 alt="..."
               ></img>
               <div className="card-body">
-                <h5 className="card-title"> Sara Rodriguez </h5>
-                <p className="card-text">"Descripcion personal del barbero" </p>
-                <p className="card-text"> 25.000$ </p>
-                <Link to="/Agenda" className="btn btn-dark text-white">
+                <h5 className="card-title">Nutricionista</h5>
+                <p className="card-text">
                   {" "}
-                  Agendar tu cita{" "}
-                </Link>
-              </div>
-            </div>
-            <div className="card">
-              <img
-                src={imagenes.img13}
-                className="card-img-top img-fluid"
-                alt="..."
-              ></img>
-              <div className="card-body">
-                <h5 className="card-title"> Jacob Alzate</h5>
-                <p className="card-text">"Descripcion personal del barbero" </p>
-                <p className="card-text"> 15.000$ </p>
-                <Link to="/Agenda" className="btn btn-dark text-white">
-                  {" "}
-                  Agendar tu cita{" "}
+                  Solicita el servicio de un Nutriologo y contactese con el
+                </p>
+                <Link to="/Nutricionistas" component={MyLink} className="btn btn-dark text-white">
+                  Solicitar nutriologo{" "}
                 </Link>
               </div>
             </div>
           </div>
         </div>
       </main>
+      <hr />
       <footer>
         <div className="copyright bg-dark text-white text-center">
           <p className="textoFooter">
@@ -190,4 +184,4 @@ function Barberos() {
   );
 }
 
-export default Barberos;
+export default withRouter (InicioPerfil);

@@ -1,11 +1,15 @@
 import React from "react";
-import "../../Estilos.css";
+
 import imagenes from "../../assets/imagenes";
 import { Button } from "@material-ui/core";
-import { Link } from "react-router-dom";
 
 //Importat React-Iconos
 import { GoArrowRight, GoPerson } from "react-icons/go";
+
+import Link from '@material-ui/core/Link';
+import { Link as RouterLink, withRouter } from 'react-router-dom';
+
+const MyLink = React.forwardRef((props, ref) => <RouterLink innerRef={ref} {...props} />);
 
 
 const Registro = () => {
@@ -31,7 +35,7 @@ const Registro = () => {
           />
           <br />
           
-        <Link to="/Registrarme"> 
+        <Link to="/signup"  component={MyLink}> 
           <Button
             className="mr-3"
             variant="outlined"
@@ -41,7 +45,7 @@ const Registro = () => {
             <GoArrowRight size="17px"/> Registrarse </Button>
         </Link>
  
-          <Link to="/IniciarSesion"> 
+          <Link to="/login"  component={MyLink}> 
           <Button
             variant="outlined"
             color="primary"
@@ -55,4 +59,4 @@ const Registro = () => {
   );
 };
 
-export default Registro;
+export default withRouter (Registro);

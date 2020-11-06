@@ -2,26 +2,30 @@ import React, { useState } from 'react';
 
 import { FcGoogle } from "react-icons/fc";
 import Avatar from '@material-ui/core/Avatar';
+import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
-import Link from '@material-ui/core/Link';
 import { Link as RouterLink, withRouter } from 'react-router-dom';
+import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import LoockOutlined from '@material-ui/icons/LockOutlined';
-
-import Alert from './Alert';
-
 import firebase from 'firebase/app';
 import 'firebase/database';
 import 'firebase/auth';
 
-const MyLink = React.forwardRef((props, ref) => (<RouterLink innerRef={ref} {...props} /> ));
+import Alert from './Alert';
 
-const useStyles = makeStyles((theme) => ({
+const MyLink = React.forwardRef((props, ref) => <RouterLink innerRef={ref} {...props} />);
+
+const useStyles = makeStyles(theme => ({
+  '@global': {
+    body: {
+      backgroundColor: theme.palette.common.white,
+    },
+  },
   paper: {
     marginTop: theme.spacing(8),
     display: 'flex',
@@ -41,72 +45,50 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const IniciarSesion = (props) => {
+const Login = (props) => {
   const classes = useStyles();
-
   const [user, setUser] = useState({
-    email:'',
-    password:''
- });
+    email: '',
+    password: ''
+  });
 
- 
- const [alertMessage, setAlertMessage ] = useState(null);
+  const [errorMessage, setErrorMessage] = useState('');
+  
+  const [alertMessage, setAlertMessage] = useState(null);
 
- const [errorMessage, setErrorMessage ] = useState('');
+  const handleChange = (e) => {
+    setUser({
+      ...user,
+      [e.target.name]: e.target.value
+    });
+  };
 
- const handleChange = (e) => {
-  setUser({
-    ...user,
-    [e.target.name]: e.target.value
-  })
-};
-
-const handleLogin = (e) =>{
-  e.preventDefault();
-  setErrorMessage('');
-
-  firebase.auth().signInWithEmailAndPassword(user.email, user.password)
-  .then(() => {
-    props.history.push('/InicioPerfil');
-  })
-  .catch (error => {
-    console.log(error);
-    setErrorMessage(error.message);
-  })
-};
+  const handleLogin = (e) => {
+    e.preventDefault();
+    setErrorMessage('');
 
 
-const LoginGoogle = () => {
-  let provider = new firebase.auth.GoogleAuthProvider();
-  firebase.auth().signInWithPopup(provider)
-   .then(response =>{
-      //Guardar los datos del usuario
-      firebase.database().ref(`/users/${response.user.uid}`).set(user);
-      //Alert Mensaje
-        setAlertMessage({
-          type: 'succes',
-          message: 'Bienvenido a BeautyServices'
-        });
-      props.history.push('/InicioPerfil');
-  }).catch (error =>{
+    //Login with email and password
+    firebase.auth().signInWithEmailAndPassword(user.email, user.password)
+    .then(response => {
+      props.history.push('/inicioPerfil');
+    })
+    .catch(error => {
       console.log(error);
-      setAlertMessage({
-        type: 'error',
-        message: error.message
-      });
-  })
- };
-
+      //alert(error.message);
+      setErrorMessage(error.message);
+    });
+  };
 
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
-          <LoockOutlined/>
+      <Avatar className={classes.avatar}>
+          <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-           Ingresar a BeautyServices
+          Ingresar a BeautyServices
         </Typography>
         <form className={classes.form} onSubmit={handleLogin}>
           <TextField
@@ -144,36 +126,26 @@ const LoginGoogle = () => {
           >
             Ingresar
           </Button>
-          <hr/>  
-          <div className="modal-body">
-                <form id="registro">
-                  <div className="form">
-                    <label for="inputEmail">Iniciar Sesion con google</label>
-                    <Button fullWidth
-                            variant="outlined"
-                            color="inherit"
-                            onClick={LoginGoogle}> <div className="mr-1"> <FcGoogle /> </div> Iniciar con Google 
-                    </Button> 
-                  </div>
-                </form>
-              </div>
           <Grid container>
             <Grid item>
-              <Link to="/Registrarme" component={MyLink} variant="body2">
-                {"¿No tienes una cuenta? ingresa aqui" }
+              <Link to="/signup" component={MyLink} variant="body2">
+                {"¿No tienes una cuenta? Ingresa aqui"}
               </Link>
             </Grid>
           </Grid>
         </form>
       </div>
-      {errorMessage && 
-      <Alert type="error" message={errorMessage} autoclose={3000} />
+      {errorMessage &&
+        <Alert type="error" message={errorMessage} autoclose={5000} />
       }
        {alertMessage && 
-         <Alert type={alertMessage.type} message={alertMessage.message} autoclose={3000} />
+        <Alert
+          type={alertMessage.type}
+          message={alertMessage.message}
+          autoclose={5000}
+        />
       }
     </Container>
   );
-}
-
-export default withRouter (IniciarSesion);
+};
+export default withRouter(Login);

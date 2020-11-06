@@ -1,5 +1,4 @@
-import React from 'react'; 
-
+import React from 'react';
 import clsx from 'clsx';
 import Icon from '@material-ui/core/Icon';
 import { amber, green } from '@material-ui/core/colors';
@@ -34,20 +33,21 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const Alert = ({ type, message, autoclose}) => {
-    const classes = useStyles();
-    const [open, setOpen] = React.useState(true);
-  
-    const handleClose = (event, reason) => {
-      if (reason === 'clickaway') {
-        return;
-      }
-   
-      setOpen(false);
-    };
+const Alert = ({ type, message, autoclose }) => {
+  const classes = useStyles();
+  const [open, setOpen] = React.useState(true);
 
-    return (
-        <Snackbar
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
+  };
+
+
+  return (
+    <Snackbar
       anchorOrigin={{
         vertical: 'bottom',
         horizontal: 'center',
@@ -73,8 +73,8 @@ const Alert = ({ type, message, autoclose}) => {
           </IconButton>,
         ]}
       />
-    </Snackbar> 
-    );
+    </Snackbar>
+  );
 }
 
 export default Alert;

@@ -1,14 +1,15 @@
 import React from "react";
 import "../../Estilos.css";
 import imagenes from "../../assets/imagenes";
-import { Link } from "react-router-dom";
 
-import Header from "../../containers/Header";
+import Link from '@material-ui/core/Link';
+import { Link as RouterLink, withRouter } from 'react-router-dom';
+
+const MyLink = React.forwardRef((props, ref) => <RouterLink innerRef={ref} {...props} />);
 
 function Masajistas() {
   return (
     <div>
-      <Header />
       <header>
         <div
           id="carouselExampleControls"
@@ -83,7 +84,7 @@ function Masajistas() {
                   "Descripcion personal del masajista"{" "}
                 </p>
                 <p className="card-text"> $20.000 </p>
-                <Link to="/Agenda" className="btn btn-dark text-white">
+                <Link to="/Agenda" component={MyLink} className="btn btn-dark text-white">
                   {" "}
                   Agendar tu cita{" "}
                 </Link>
@@ -102,7 +103,7 @@ function Masajistas() {
                   "Descripcion personal de la masajista"{" "}
                 </p>
                 <p className="card-text">45.000$ </p>
-                <Link to="/Agenda" className="btn btn-dark text-white">
+                <Link to="/Agenda" component={MyLink} className="btn btn-dark text-white">
                   {" "}
                   Agendar tu cita{" "}
                 </Link>
@@ -141,7 +142,7 @@ function Masajistas() {
                   "Descripcion personal de la masajista"{" "}
                 </p>
                 <p className="card-text"> 15.000$ </p>
-                <Link to="/Agenda" className="btn btn-dark text-white">
+                <Link to="/Agenda" component={MyLink} className="btn btn-dark text-white">
                   {" "}
                   Agendar tu cita{" "}
                 </Link>
@@ -159,7 +160,7 @@ function Masajistas() {
                   "Descripcion personal de la masajista"{" "}
                 </p>
                 <p className="card-text"> 25.000$ </p>
-                <Link to="/Agenda" className="btn btn-dark text-white">
+                <Link to="/Agenda" component={MyLink} className="btn btn-dark text-white">
                   {" "}
                   Agendar tu cita{" "}
                 </Link>
@@ -177,7 +178,7 @@ function Masajistas() {
                   "Descripcion personal de la masajista"{" "}
                 </p>
                 <p className="card-text"> 15.000$ </p>
-                <Link to="/Agenda" className="btn btn-dark text-white">
+                <Link to="/Agenda" component={MyLink} className="btn btn-dark text-white">
                   {" "}
                   Agendar tu cita{" "}
                 </Link>
@@ -200,4 +201,4 @@ function Masajistas() {
   );
 }
 
-export default Masajistas;
+export default withRouter (Masajistas);

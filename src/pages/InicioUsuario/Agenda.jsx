@@ -6,8 +6,6 @@ import imagenes from "../../assets/imagenes";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-import Header from '../../containers/Header';
-
 //SelectDinamico
 const categorias = [
   {
@@ -85,7 +83,6 @@ function Agenda() {
   return (
     <Fragment>
       <div>
-        <Header/>
         <header>
           <div
             id="carouselExampleControls"

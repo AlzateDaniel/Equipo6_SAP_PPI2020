@@ -1,14 +1,15 @@
 import React from "react";
 import "../../Estilos.css";
 import imagenes from "../../assets/imagenes";
-import { Link } from "react-router-dom";
 
-import Header from "../../containers/Header";
+import Link from '@material-ui/core/Link';
+import { Link as RouterLink, withRouter } from 'react-router-dom';
+
+const MyLink = React.forwardRef((props, ref) => <RouterLink innerRef={ref} {...props} />);
 
 function Salud() {
   return (
     <div>
-      <Header />
       <header>
         <div
           id="carouselExampleControls"
@@ -111,7 +112,9 @@ function Salud() {
                   href="https://api.whatsapp.com/send?phone=57 322-354-8335&amp;text=Hola,%20me%20gustaria%20solicitar%20un%20servicio..."
                   className="btn btn-dark text-white"
                 >
-                  Solicitar
+                  <Link to="/entrenadores" component={MyLink} className="btn btn-dark text-white">
+                  Solicitar entrenador{" "}
+                </Link>
                 </a>
               </div>
             </div>
@@ -128,7 +131,7 @@ function Salud() {
                   Solicita el servicio de Masajes y agenda tu cita{" "}
                 </p>
                 <p className="card-text"> "Descripcion" </p>
-                <Link to="/Masajistas" className="btn btn-dark text-white">
+                <Link to="/masajistas" component={MyLink} className="btn btn-dark text-white">
                   Solicitar masajista{" "}
                 </Link>
               </div>
@@ -151,4 +154,4 @@ function Salud() {
   );
 }
 
-export default Salud;
+export default withRouter (Salud);
