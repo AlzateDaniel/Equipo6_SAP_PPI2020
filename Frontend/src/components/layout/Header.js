@@ -66,7 +66,7 @@ const Header = (props) => {
     <div className={classes.root}>
       <AppBar position="static" className="navbar-dark bg-dark" > 
         <Toolbar>
-          <IconButton disabled onClick={handleMenu} edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+          <IconButton onClick={handleMenu} edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
             <Icon>menu</Icon>
           </IconButton>
           <Menu

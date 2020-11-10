@@ -15,7 +15,7 @@ function Logoinicio() {
       <br />
       <br />
       <br />
-      <br />
+
    
       <Link to="/userOempleado" component={MyLink}>
         <img

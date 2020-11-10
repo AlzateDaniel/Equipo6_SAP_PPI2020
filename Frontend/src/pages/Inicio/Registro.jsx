@@ -28,6 +28,7 @@ const Registro = () => {
         <div className="cuerpo" align="center">
           <br />
           <br />
+        
           <img
             src={imagenes.img27}
             alt="..."

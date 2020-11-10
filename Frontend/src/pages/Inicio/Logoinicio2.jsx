@@ -37,7 +37,7 @@ function Logoinicio2() {
         <Link to="/registroTrabajador"  component={MyLink}>
           <Button variant="outlined" color="primary">
             {" "}
-            <FaUserTie /> Trabajador{" "}
+            <FaUserTie /> Empleado{" "}
           </Button>
         </Link>
       </div>
