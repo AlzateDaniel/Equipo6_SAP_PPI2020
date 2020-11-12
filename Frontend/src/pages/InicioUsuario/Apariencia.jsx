@@ -3,6 +3,7 @@ import'../../Estilos.css';
 import imagenes from "../../assets/imagenes";
 import Link from '@material-ui/core/Link';
 import { Link as RouterLink, withRouter } from 'react-router-dom';
+import Footer from '../../components/layout/Footer';
 
 const MyLink = React.forwardRef((props, ref) => <RouterLink innerRef={ref} {...props} />);
 
@@ -132,14 +133,7 @@ function Apariencia() {
     </div>
       </main>
 <hr/>
-      <footer>
-        <div className="copyright bg-dark text-white text-center">
-          <p className="textoFooter">Todos los derechos reservados ©2020-2021</p>
-          <i className="fab fa-instagram fa-2x"></i> &nbsp;&nbsp;
-          <i className="fab fa-twitter fa-2x"></i> &nbsp;&nbsp;
-          <i className="fab fa-facebook-square fa-2x"></i> &nbsp;&nbsp;
-        </div>
-      </footer>
+      <Footer/>
  </div>
     )
 }

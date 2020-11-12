@@ -1,19 +1,18 @@
 import React from "react";
-import "../../Estilos.css";
-import imagenes from "../../assets/imagenes";
-import Footer from '../../components/layout/Footer';
+import "../../../Estilos.css";
+import imagenes from "../../../assets/imagenes";
+
+import Footer from '../../../components/layout/Footer';
 
 import Link from '@material-ui/core/Link';
 import { Link as RouterLink, withRouter } from 'react-router-dom';
 
 const MyLink = React.forwardRef((props, ref) => <RouterLink innerRef={ref} {...props} />);
 
-
-function InicioPerfil() {
-
+function Masajistas() {
   return (
     <div>
-      <header> 
+      <header>
         <div
           id="carouselExampleControls"
           className="carousel slide"
@@ -22,21 +21,21 @@ function InicioPerfil() {
           <div className="carousel-inner">
             <div className="carousel-item active">
               <img
-                src={imagenes.img1}
+                src={imagenes.img10}
                 className="d-block w-100"
                 alt="..."
               ></img>
             </div>
             <div className="carousel-item">
               <img
-                src={imagenes.img2}
+                src={imagenes.img19}
                 className="d-block w-100"
                 alt="..."
               ></img>
             </div>
             <div className="carousel-item ">
               <img
-                src={imagenes.img3}
+                src={imagenes.img20}
                 className="d-block w-100"
                 alt="..."
               ></img>
@@ -70,110 +69,129 @@ function InicioPerfil() {
       </header>
       <hr />
       <main>
-        <h2 className="text-center text-center my-5">
-          <small>
-            Problemas con tu ¿apariencia? pide el servicio que quieras, nosotros
-            te complacemos y mucho mas.
-          </small>
-        </h2>
-        <hr />
         <h1 id="Algunos" className="text-primary text-center my-4">
-          Algunos Servicios
+          Solicita la masajista que tu quieras
         </h1>
-        <div class="card-columns">
+        <div className="card-columns">
           <div className="container text-center">
             <div className="card">
               <img
-                src={imagenes.img4}
+                src={imagenes.img21}
                 className="card-img-top img-fluid"
                 alt="..."
               ></img>
               <div className="card-body">
-                <h5 className="card-title">Barberia</h5>
+                <h5 className="card-title"> Esteban Pertuz </h5>
                 <p className="card-text">
-                  Solicita el servicio de barberia y agenda tu cita{" "}
+                  "Descripcion personal del masajista"{" "}
                 </p>
-                <Link to="/barberos" component={MyLink} className="btn btn-dark text-white">
-                  Solicitar barbero{" "}
+                <p className="card-text"> $20.000 </p>
+                <Link to="/Agenda" component={MyLink} className="btn btn-dark text-white">
+                  {" "}
+                  Agendar tu cita{" "}
                 </Link>
               </div>
             </div>
             <div className="card">
               <img
-                src={imagenes.img5}
+                src={imagenes.img22}
                 className="card-img-top img-fluid"
                 alt="..."
               ></img>
               <div className="card-body">
-                <h5 className="card-title"> Manicure </h5>
+                <h5 className="card-title"> Michell Perez </h5>
                 <p className="card-text">
                   {" "}
-                  Solicita el servicio de Manicure y agenda tu cita{" "}
+                  "Descripcion personal de la masajista"{" "}
                 </p>
-                <Link to="/manicuristas" component={MyLink} className="btn btn-dark text-white">
-                  Solicitar manicurista{" "}
+                <p className="card-text">45.000$ </p>
+                <Link to="/Agenda" component={MyLink} className="btn btn-dark text-white">
+                  {" "}
+                  Agendar tu cita{" "}
                 </Link>
               </div>
             </div>
             <div className="card">
               <img
-                src={imagenes.img6}
+                src={imagenes.img23}
                 className="card-img-top img-fluid"
                 alt="..."
               ></img>
               <div className="card-body">
-                <h5 className="card-title">Entrenador/a Personal</h5>
+                <h5 className="card-title"> Sara Cano</h5>
                 <p className="card-text">
                   {" "}
-                  Solicita el servicio de Trainning personal y contactese con el
-                  asesor{" "}
+                  "Descripcion personal de la masajista"{" "}
                 </p>
-                <Link to="/entrenadores" component={MyLink} className="btn btn-dark text-white">
-                  Solicitar entrenador/a{" "}
+                <p className="card-text"> 40.000$ </p>
+                <a
+                  href="https://api.whatsapp.com/send?phone=57 322-354-8335&amp;text=Hola,%20me%20gustaria%20solicitar%20un%20servicio..."
+                  className="btn btn-dark text-white"
+                >
+                  Agenda tu cita
+                </a>
+              </div>
+            </div>
+            <div className="card">
+              <img
+                src={imagenes.img24}
+                className="card-img-top img-fluid"
+                alt="..."
+              ></img>
+              <div className="card-body">
+                <h5 className="card-title">Luisa Alzate</h5>
+                <p className="card-text">
+                  "Descripcion personal de la masajista"{" "}
+                </p>
+                <p className="card-text"> 15.000$ </p>
+                <Link to="/Agenda" component={MyLink} className="btn btn-dark text-white">
+                  {" "}
+                  Agendar tu cita{" "}
                 </Link>
               </div>
             </div>
             <div className="card">
               <img
-                src={imagenes.img7}
+                src={imagenes.img25}
                 className="card-img-top img-fluid"
                 alt="..."
               ></img>
               <div className="card-body">
-                <h5 className="card-title">Masajista</h5>
+                <h5 className="card-title">Silvana Valencia </h5>
                 <p className="card-text">
-                  {" "}
-                  Solicita el servicio de Masajes y agenda tu cita{" "}
+                  "Descripcion personal de la masajista"{" "}
                 </p>
-                <Link to="/masajistas" component={MyLink} className="btn btn-dark text-white">
-                  Solicitar masajista{" "}
+                <p className="card-text"> 25.000$ </p>
+                <Link to="/Agenda" component={MyLink} className="btn btn-dark text-white">
+                  {" "}
+                  Agendar tu cita{" "}
                 </Link>
               </div>
             </div>
             <div className="card">
               <img
-                src={imagenes.img8}
+                src={imagenes.img26}
                 className="card-img-top img-fluid"
                 alt="..."
               ></img>
               <div className="card-body">
-                <h5 className="card-title">Nutricionista</h5>
+                <h5 className="card-title"> Manuela Duarte</h5>
                 <p className="card-text">
-                  {" "}
-                  Solicita el servicio de un Nutriologo y contactese con el
+                  "Descripcion personal de la masajista"{" "}
                 </p>
-                <Link to="/nutricionistas" component={MyLink} className="btn btn-dark text-white">
-                  Solicitar nutriologo{" "}
+                <p className="card-text"> 15.000$ </p>
+                <Link to="/Agenda" component={MyLink} className="btn btn-dark text-white">
+                  {" "}
+                  Agendar tu cita{" "}
                 </Link>
               </div>
             </div>
           </div>
         </div>
       </main>
-      <hr />
-    <Footer/> 
+      <Footer/>
     </div>
   );
 }
 
-export default withRouter (InicioPerfil);
+export default withRouter (Masajistas);

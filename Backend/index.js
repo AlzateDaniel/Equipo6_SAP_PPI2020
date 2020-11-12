@@ -31,6 +31,7 @@ mysqlConnection.connect((error)=>{
 
 
 
+
 // Esta es la parte donde se realiza la parte de subir una imagen o archivo
 //Multer Middlwares
 const storage = multer.diskStorage({

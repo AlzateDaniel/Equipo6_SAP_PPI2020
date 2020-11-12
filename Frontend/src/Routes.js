@@ -17,9 +17,13 @@ import inicioPerfil from './pages/InicioUsuario/InicioPerfil';
 import Quienessomos2 from './pages/InicioUsuario/Quienessomos2';
 import Salud from './pages/InicioUsuario/Salud';
 import Apariencia from './pages/InicioUsuario/Apariencia';
-import Barberos from './pages/InicioUsuario/Barberos';
-import Masajistas from './pages/InicioUsuario/Masajistas';
 import Agenda from './pages/InicioUsuario/Agenda';
+
+//Servicios
+import Entrenadores from './pages/InicioUsuario/services/Entrenadores';
+import Barberos from './pages/InicioUsuario/services/Barberos';
+import Masajistas from './pages/InicioUsuario/services/Masajistas';
+import Nutricionistas from './pages/InicioUsuario/services/Nutricionistas';
 
 
 
@@ -40,6 +44,8 @@ const Routes = () => (
     <Route path="/apariencia" component={Apariencia}/>  
     <Route path="/barberos" component={Barberos}/>  
     <Route path="/masajistas" component={Masajistas}/>  
+    <Route path="/entrenadores" component={Entrenadores}/>  
+    <Route path="/nutricionistas" component={Nutricionistas}/> 
     <Route path="/agenda" component={Agenda}/>  
   </Switch>
 );

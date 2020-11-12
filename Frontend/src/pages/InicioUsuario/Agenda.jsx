@@ -2,6 +2,8 @@ import React, { Fragment, useState } from "react";
 import "../../Estilos.css";
 import imagenes from "../../assets/imagenes";
 
+import Footer from '../../components/layout/Footer';
+
 //DatePicker
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -55,11 +57,11 @@ const categorias = [
   {
     servicio: "Nutricionista",
     trabajadores: [
-      "Tommy Alzate",
-      "Hernan Cossio",
-      "Luis Saltsman",
-      "Stephan Salvatore",
-      "James Arango",
+      "Sara Alzate",
+      "Dereck Cossio",
+      "Marllely Saltsman",
+      "Juliana Salvatore",
+      "Maribel Arango",
       "Mateo Oasis",
     ],
   },
@@ -207,16 +209,7 @@ function Agenda() {
           </div>
         </main>
         <hr />
-        <footer>
-          <div className="copyright bg-dark text-white text-center">
-            <p className="textoFooter">
-              Todos los derechos reservados ©2020-2021
-            </p>
-            <i className="fab fa-instagram fa-2x"></i> &nbsp;&nbsp;
-            <i className="fab fa-twitter fa-2x"></i> &nbsp;&nbsp;
-            <i className="fab fa-facebook-square fa-2x"></i> &nbsp;&nbsp;
-          </div>
-        </footer>
+        <Footer/>
       </div>
     </Fragment>
   );

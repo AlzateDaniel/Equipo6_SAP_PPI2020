@@ -1,6 +1,7 @@
 import React from "react";
-import "../../Estilos.css";
-import imagenes from "../../assets/imagenes";
+import "../../../Estilos.css";
+import imagenes from "../../../assets/imagenes";
+import Footer from '../../../components/layout/Footer';
 
 import Link from '@material-ui/core/Link';
 import { Link as RouterLink, withRouter } from 'react-router-dom';
@@ -177,16 +178,7 @@ function Barberos() {
           </div>
         </div>
       </main>
-      <footer>
-        <div className="copyright bg-dark text-white text-center">
-          <p className="textoFooter">
-            Todos los derechos reservados ©2020-2021
-          </p>
-          <i className="fab fa-instagram fa-2x"></i> &nbsp;&nbsp;
-          <i className="fab fa-twitter fa-2x"></i> &nbsp;&nbsp;
-          <i className="fab fa-facebook-square fa-2x"></i> &nbsp;&nbsp;
-        </div>
-      </footer>
+      <Footer/>
     </div>
   );
 }
