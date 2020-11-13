@@ -8,7 +8,7 @@ import { Link as RouterLink, withRouter } from 'react-router-dom';
 
 const MyLink = React.forwardRef((props, ref) => <RouterLink innerRef={ref} {...props} />);
 
-function Barberos() {
+function Manicuristas() {
   return (
     <div>
       <header>
@@ -20,21 +20,14 @@ function Barberos() {
           <div className="carousel-inner">
             <div className="carousel-item active">
               <img
-                src={imagenes.img18}
+                src={imagenes.img45}
                 className="d-block w-100"
                 alt="..."
               ></img>
             </div>
             <div className="carousel-item">
               <img
-                src={imagenes.img19}
-                className="d-block w-100"
-                alt="..."
-              ></img>
-            </div>
-            <div className="carousel-item ">
-              <img
-                src={imagenes.img20}
+                src={imagenes.img46}
                 className="d-block w-100"
                 alt="..."
               ></img>
@@ -69,91 +62,23 @@ function Barberos() {
       <hr />
       <main>
         <h1 id="Algunos" className="text-primary text-center my-4">
-          Solicita el barbero que tu quieras
+          Solicita la Manicurista que tu quieras 
         </h1>
         <div className="card-columns">
           <div className="container text-center">
             <div className="card">
               <img
-                src={imagenes.img12}
+                src={imagenes.img47}
                 className="card-img-top img-fluid"
                 alt="..."
               ></img>
               <div className="card-body">
-                <h5 className="card-title">Michael Ross</h5>
-                <p className="card-text">"Descripcion personal del barbero" </p>
-                <p className="card-text"> 20.000$ </p>
-                <Link to="/agenda"  component={MyLink} className="btn btn-dark text-white">
-                  {" "}
-                  agendar tu cita{" "}
-                </Link>
-              </div>
-            </div>
-            <div className="card">
-              <img
-                src={imagenes.img17}
-                className="card-img-top img-fluid"
-                alt="..."
-              ></img>
-              <div className="card-body">
-                <h5 className="card-title"> David Arango </h5>
+                <h5 className="card-title"> Derly Restrepo </h5>
                 <p className="card-text">
-                  {" "}
-                  "Descripcion personal del barbero"{" "}
+                  "Descripcion personal de la Nutricionista"{" "}
                 </p>
-                <p className="card-text">45.000$ </p>
-                <Link to="/agenda"  component={MyLink} className="btn btn-dark text-white">
-                  {" "}
-                  agendar tu cita{" "}
-                </Link>
-              </div>
-            </div>
-            <div className="card">
-              <img
-                src={imagenes.img14}
-                className="card-img-top img-fluid"
-                alt="..."
-              ></img>
-              <div className="card-body">
-                <h5 className="card-title"> Harvy Specter</h5>
-                <p className="card-text">
-                  {" "}
-                  "Descripcion personal del barbero"{" "}
-                </p>
-                <p className="card-text"> 40.000$ </p>
-                <Link to="/agenda"  component={MyLink} className="btn btn-dark text-white">
-                  {" "}
-                  agendar tu cita{" "}
-                </Link>
-              </div>
-            </div>
-            <div className="card">
-              <img
-                src={imagenes.img15}
-                className="card-img-top img-fluid"
-                alt="..."
-              ></img>
-              <div className="card-body">
-                <h5 className="card-title">Louis Dior</h5>
-                <p className="card-text">"Descripcion personal del barbero" </p>
-                <p className="card-text"> 15.000$ </p>
-                <Link to="/agenda"  component={MyLink} className="btn btn-dark text-white">
-                  {" "}
-                  agendar tu cita{" "}
-                </Link>
-              </div>
-            </div>
-            <div className="card">
-              <img
-                src={imagenes.img16}
-                className="card-img-top img-fluid"
-                alt="..."
-              ></img>
-              <div className="card-body">
-                <h5 className="card-title"> Sara Rodriguez </h5>
-                <p className="card-text">"Descripcion personal del barbero" </p>
-                <p className="card-text"> 25.000$ </p>
-                <Link to="/agenda"  component={MyLink} className="btn btn-dark text-white">
+                <p className="card-text"> $20.000 </p>
+                <Link to="/Agenda" component={MyLink} className="btn btn-dark text-white">
                   {" "}
                   Agendar tu cita{" "}
                 </Link>
@@ -161,17 +86,95 @@ function Barberos() {
             </div>
             <div className="card">
               <img
-                src={imagenes.img13}
+                src={imagenes.img48}
                 className="card-img-top img-fluid"
                 alt="..."
               ></img>
               <div className="card-body">
-                <h5 className="card-title"> Jacob Alzate</h5>
-                <p className="card-text">"Descripcion personal del barbero" </p>
-                <p className="card-text"> 15.000$ </p>
-                <Link to="/agenda"  component={MyLink} className="btn btn-dark text-white">
+                <h5 className="card-title">Lorena Montoya </h5>
+                <p className="card-text">
                   {" "}
-                  agendar tu cita{" "}
+                  "Descripcion personal de la Manicurista"{" "}
+                </p>
+                <p className="card-text">45.000$ </p>
+                <Link to="/Agenda" component={MyLink} className="btn btn-dark text-white">
+                  {" "}
+                  Agendar tu cita{" "}
+                </Link>
+              </div>
+            </div>
+            <div className="card">
+              <img
+                src={imagenes.img49}
+                className="card-img-top img-fluid"
+                alt="..."
+              ></img>
+              <div className="card-body">
+                <h5 className="card-title">Nataly Arango </h5>
+                <p className="card-text">
+                  {" "}
+                  "Descripcion personal de la Manicurista"{" "}
+                </p>
+                <p className="card-text"> 40.000$ </p>
+                <a
+                  href="https://api.whatsapp.com/send?phone=57 322-354-8335&amp;text=Hola,%20me%20gustaria%20solicitar%20un%20servicio..."
+                  className="btn btn-dark text-white"
+                >
+                  Agenda tu cita
+                </a>
+              </div>
+            </div>
+            <div className="card">
+              <img
+                src={imagenes.img50}
+                className="card-img-top img-fluid"
+                alt="..."
+              ></img>
+              <div className="card-body">
+                <h5 className="card-title">Sara Orrego</h5>
+                <p className="card-text">
+                  "Descripcion personal de la Manicurista"{" "}
+                </p>
+                <p className="card-text"> 15.000$ </p>
+                <Link to="/Agenda" component={MyLink} className="btn btn-dark text-white">
+                  {" "}
+                  Agendar tu cita{" "}
+                </Link>
+              </div>
+            </div>
+            <div className="card">
+              <img
+                src={imagenes.img51}
+                className="card-img-top img-fluid"
+                alt="..."
+              ></img>
+              <div className="card-body">
+                <h5 className="card-title">Luna Hernandez</h5>
+                <p className="card-text">
+                  "Descripcion personal de la Manicurista"{" "}
+                </p>
+                <p className="card-text"> 25.000$ </p>
+                <Link to="/Agenda" component={MyLink} className="btn btn-dark text-white">
+                  {" "}
+                  Agendar tu cita{" "}
+                </Link>
+              </div>
+            </div>
+            <div className="card">
+              <img
+                src={imagenes.img52}
+                className="card-img-top img-fluid"
+                alt="..."
+              ></img>
+              <div className="card-body">
+                <h5 className="card-title">Francelly Arrubla</h5>
+                <p className="card-text">
+                  "Descripcion personal de la Manicurista"{" "}
+                </p>
+                <p className="card-text"> 15.000$ </p>
+                <Link to="/Agenda" component={MyLink} className="btn btn-dark text-white">
+                  {" "}
+                  Agendar tu cita{" "}
                 </Link>
               </div>
             </div>
@@ -183,4 +186,4 @@ function Barberos() {
   );
 }
 
-export default withRouter (Barberos);
+export default withRouter (Manicuristas);

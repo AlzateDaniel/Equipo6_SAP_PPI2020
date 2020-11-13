@@ -86,7 +86,7 @@ function Entrenadores() {
                   "Descripcion personal del Entrenador"{" "}
                 </p>
                 <p className="card-text"> $20.000 </p>
-                <Link to="/Agenda" component={MyLink} className="btn btn-dark text-white">
+                <Link to="/agenda" component={MyLink} className="btn btn-dark text-white">
                   {" "}
                   Agendar tu cita{" "}
                 </Link>
@@ -105,7 +105,7 @@ function Entrenadores() {
                   "Descripcion personal del Entrenador"{" "}
                 </p>
                 <p className="card-text">45.000$ </p>
-                <Link to="/Agenda" component={MyLink} className="btn btn-dark text-white">
+                <Link to="/agenda" component={MyLink} className="btn btn-dark text-white">
                   {" "}
                   Agendar tu cita{" "}
                 </Link>
@@ -124,12 +124,10 @@ function Entrenadores() {
                   "Descripcion personal del Entrenador"{" "}
                 </p>
                 <p className="card-text"> 40.000$ </p>
-                <a
-                  href="https://api.whatsapp.com/send?phone=57 322-354-8335&amp;text=Hola,%20me%20gustaria%20solicitar%20un%20servicio..."
-                  className="btn btn-dark text-white"
-                >
-                  Agenda tu cita
-                </a>
+                <Link to="/agenda"  component={MyLink} className="btn btn-dark text-white">
+                  {" "}
+                  Agendar tu cita{" "}
+                </Link>
               </div>
             </div>
             <div className="card">
@@ -144,7 +142,7 @@ function Entrenadores() {
                   "Descripcion personal de la Entrenadora"{" "}
                 </p>
                 <p className="card-text"> 15.000$ </p>
-                <Link to="/Agenda" component={MyLink} className="btn btn-dark text-white">
+                <Link to="/agenda" component={MyLink} className="btn btn-dark text-white">
                   {" "}
                   Agendar tu cita{" "}
                 </Link>
@@ -162,7 +160,7 @@ function Entrenadores() {
                   "Descripcion personal de la Entrenadora"{" "}
                 </p>
                 <p className="card-text"> 25.000$ </p>
-                <Link to="/Agenda" component={MyLink} className="btn btn-dark text-white">
+                <Link to="/agenda" component={MyLink} className="btn btn-dark text-white">
                   {" "}
                   Agendar tu cita{" "}
                 </Link>
@@ -180,7 +178,7 @@ function Entrenadores() {
                   "Descripcion personal del Entrenador"{" "}
                 </p>
                 <p className="card-text"> 15.000$ </p>
-                <Link to="/Agenda" component={MyLink} className="btn btn-dark text-white">
+                <Link to="/agenda" component={MyLink} className="btn btn-dark text-white">
                   {" "}
                   Agendar tu cita{" "}
                 </Link>

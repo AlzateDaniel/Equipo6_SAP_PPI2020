@@ -24,6 +24,8 @@ import Entrenadores from './pages/InicioUsuario/services/Entrenadores';
 import Barberos from './pages/InicioUsuario/services/Barberos';
 import Masajistas from './pages/InicioUsuario/services/Masajistas';
 import Nutricionistas from './pages/InicioUsuario/services/Nutricionistas';
+import Manicuristas from './pages/InicioUsuario/services/Manicuristas';
+
 
 
 
@@ -42,11 +44,14 @@ const Routes = () => (
     <Route path="/quienesSomos"component={Quienessomos2}/>  
     <Route path="/salud" component={Salud}/>  
     <Route path="/apariencia" component={Apariencia}/>  
+    <Route path="/agenda" component={Agenda}/>  
+
     <Route path="/barberos" component={Barberos}/>  
     <Route path="/masajistas" component={Masajistas}/>  
     <Route path="/entrenadores" component={Entrenadores}/>  
     <Route path="/nutricionistas" component={Nutricionistas}/> 
-    <Route path="/agenda" component={Agenda}/>  
+    <Route path="/manicuristas" component={Manicuristas}/> 
+
   </Switch>
 );
 

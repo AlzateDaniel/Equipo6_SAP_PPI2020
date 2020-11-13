@@ -1,11 +1,14 @@
-import Banner1 from './img/Banner1.png';
-import Banner2 from './img/Banner2.png';
-import Banner3 from './img/Banner3.png';
 import Barberia from './img/Barberia/Barberia.jpg';
-import Manicurista from './img/Manicurista.jpg';
+import Manicurista from './img/Manicuristas/Manicurista.jpg';
 import entrenadorPersonal from './img/Entrenadores/entrenadorPersonal.jpg';
 import Masajista from './img/Masajes/Masajista.jpg';
 import Nutricionista from './img/Nutricionistas/Nutricionista.jpg';
+
+import Logo from '../assets/img/Logo.PNG';
+
+import Banner1 from './img/Banner1.png';
+import Banner2 from './img/Banner2.png';
+import Banner3 from './img/Banner3.png';
 import Banner4 from './img/Banner4.png';
 import Banner5 from './img/Banner5.png';
 import Banner6 from './img/Banner6.png';
@@ -17,24 +20,30 @@ import Banner11 from './img/Banner11.png';
 import Banner12 from './img/Banner12.png';
 import Banner13 from './img/Banner13.png';
 import Banner14 from './img/Banner14.png';
+import Banner15 from './img/Banner15.png';
+import Banner16 from './img/Banner16.png';
+
 import Barbero1 from './img/Barberia/Barbero1.jpg';
 import Barbero2 from './img/Barberia/Barbero2.jpg';
 import Barbero3 from './img/Barberia/Barbero3.jpg';
 import Barbero4 from './img/Barberia/Barbero4.jpg';
 import Barbero5 from './img/Barberia/Barbero5.jpg';
 import Barbero6 from './img/Barberia/Barbero6.jpg';
+
 import Masajista1 from './img/Masajes/Masajista1.PNG';
 import Masajista2 from './img/Masajes/Masajista2.PNG';
 import Masajista3 from './img/Masajes/Masajista3.PNG';
 import Masajista4 from './img/Masajes/Masajista4.PNG';
 import Masajista5 from './img/Masajes/Masajista5.PNG';
 import Masajista6 from './img/Masajes/Masajista6.PNG';
+
 import Entrenador1 from './img/Entrenadores/Entrenador1.jpg';
 import Entrenador2 from './img/Entrenadores/Entrenador2.jpg';
 import Entrenador3 from './img/Entrenadores/Entrenador3.jpg';
 import Entrenador4 from './img/Entrenadores/Entrenador4.jpg';
 import Entrenador5 from './img/Entrenadores/Entrenador5.jpg';
 import Entrenador6 from './img/Entrenadores/Entrenador6.jpg';
+
 import Nutricionista1 from './img/Nutricionistas/Nutricionista1.jpg';
 import Nutricionista2 from './img/Nutricionistas/Nutricionista2.jpg';
 import Nutricionista3 from './img/Nutricionistas/Nutricionista3.jpg';
@@ -42,8 +51,13 @@ import Nutricionista4 from './img/Nutricionistas/Nutricionista4.jpg';
 import Nutricionista5 from './img/Nutricionistas/Nutricionista5.jpg';
 import Nutricionista6 from './img/Nutricionistas/Nutricionista6.jpg';
 
+import Manicurista1 from './img/Manicuristas/Manicurista1.jpg';
+import Manicurista2 from './img/Manicuristas/Manicurista2.jpg';
+import Manicurista3 from './img/Manicuristas/Manicurista3.jpg';
+import Manicurista4 from './img/Manicuristas/Manicurista4.jpg';
+import Manicurista5 from './img/Manicuristas/Manicurista5.jpg';
+import Manicurista6 from './img/Manicuristas/Manicurista6.jpg';
 
-import Logo from '../assets/img/Logo.PNG';
 
 
 
@@ -91,6 +105,15 @@ export default {
     "img41": Nutricionista3,
     "img42": Nutricionista4,
     "img43": Nutricionista5,
-    "img44": Nutricionista6
+    "img44": Nutricionista6,
+    "img45": Banner15,
+    "img46": Banner16,
+    "img47": Manicurista1,
+    "img48": Manicurista2,
+    "img49": Manicurista3,
+    "img50": Manicurista4,
+    "img51": Manicurista5,
+    "img52": Manicurista6
 }
+
 

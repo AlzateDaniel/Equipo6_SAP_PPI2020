@@ -123,12 +123,10 @@ function Nutricionistas() {
                   "Descripcion personal del Nutricionista"{" "}
                 </p>
                 <p className="card-text"> 40.000$ </p>
-                <a
-                  href="https://api.whatsapp.com/send?phone=57 322-354-8335&amp;text=Hola,%20me%20gustaria%20solicitar%20un%20servicio..."
-                  className="btn btn-dark text-white"
-                >
-                  Agenda tu cita
-                </a>
+                <Link to="/Agenda"  component={MyLink} className="btn btn-dark text-white">
+                  {" "}
+                  Agendar tu cita{" "}
+                </Link>
               </div>
             </div>
             <div className="card">
