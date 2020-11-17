@@ -1,34 +1,41 @@
 'use strict';
 
-// Para inicilizar en express
 const express = require('express');
-// Para subir archivos
-const multer = require('multer');
-// uuid para cambiar el nombre de los archivos
-const { uuid } = require('uuidv4');
-//path para utilizar el dirname
+
+//Importaciones de las tablas
+const usuarios = require('./routes/usuarios');
+const empleados = require('./routes/empleados');
+const servicios = require('./routes/servicios');
+const citas = require('./routes/citas');
+
 const path = require('path');
 // Inicializamos express
 const app = express();
 
-//Base de datos
-const mysql = require('mysql');
-const mysqlConnection = mysql.createConnection({
-    host: 'localhost',
-    user: 'DanielAlzate',
-    password: '1001470183Dam',
-    database: 'beautyservices',
-    multipleStatements: true
-});
-mysqlConnection.connect((error)=>{
-    if(error){
-        console.error(error);
-        return;
-    }else{
-        console.log('Y conexion de base ¡Exitosa!')
-    }
+
+// Para subir archivos
+const multer = require('multer');
+// uuid para cambiar el nombre de los archivos
+const { uuid } = require('uuidv4');
+
+
+
+
+// Middlewares
+app.use(express.json());
+
+
+//Servidor
+app.get('/', (req, res) => {
+    res.send('Servidor BeautyServices corriendo');
 });
 
+
+//Rutas
+app.use('/api', usuarios);
+app.use('/api/empleados', empleados);
+app.use('/api/servicios', servicios);
+app.use('/api/citas', citas);
 
 
 
@@ -54,9 +61,9 @@ app.use(require('./routes/routes'));
 
 
 //Establecemos el puerto
-app.set('port', process.env.PORT || 4000);
+app.set('port', 4000);
 
 //Iniciamos el servidor
 app.listen(app.get('port'), () => {
-    console.log(`Servidor de BeautyServices corriendo ${app.get('port')}`);
+    console.log(`Servidor de BeautyServices corriendo en el puerto ${app.get('port')}`);
 });
