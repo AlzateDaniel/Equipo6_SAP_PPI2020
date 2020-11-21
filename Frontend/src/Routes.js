@@ -3,10 +3,10 @@ import { Route, Switch } from 'react-router-dom';
 
 //Componentes
 //Usuario
-import Login from './components/Login';
-import Signup from './components/Signup';
+import Login from './components/usuario/Login';
+import Signup from './components/usuario/Signup';
 import Chat from './components/Chat';
-import Profile from './components/Profile';
+import Profile from './components/usuario/Profile';
 //Empleados
 import Loginempleado from './components/empleado/Loginempleado';
 import Signupempleado from './components/empleado/Signupempleado';

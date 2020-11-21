@@ -14,9 +14,9 @@ import firebase from 'firebase/app';
 import 'firebase/database';
 import 'firebase/auth';
 import 'firebase/storage';
-import Alert from './Alert';
-import CustomAvatar from './CustomAvatar';
-import { loadUser } from '../utils/dbUtils';
+import Alert from '../Alert';
+import CustomAvatar from '../CustomAvatar';
+import { loadUser } from '../../utils/dbUtils';
 
 const MyLink = React.forwardRef((props, ref) => <RouterLink innerRef={ref} {...props} />);
 
