@@ -1,5 +1,5 @@
 import React from "react";
-import imagenes from "../../assets/imagenes";
+import imagenes from "../../../assets/imagenes";
 import Button from "@material-ui/core/Button";
 import { BsPerson } from "react-icons/bs";
 import { FaUserTie } from "react-icons/fa";
@@ -27,14 +27,14 @@ function Logoinicio2() {
       <br />
 
       <div align="center">
-        <Link to="/registrooIniciar" component={MyLink}>
+        <Link to="/regUsuario" component={MyLink}>
           <Button className="mr-3" variant="outlined" color="primary">
             {" "}
             <BsPerson size="17px" /> Usuario{" "}
           </Button>
         </Link>
 
-        <Link to="/registroTrabajador"  component={MyLink}>
+        <Link to="/regEmpleado"  component={MyLink}>
           <Button variant="outlined" color="primary">
             {" "}
             <FaUserTie /> Empleado{" "}

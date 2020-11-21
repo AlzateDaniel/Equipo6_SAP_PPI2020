@@ -3,6 +3,8 @@ import firebase from 'firebase/app';
 import 'firebase/database';
 import 'firebase/storage';
 
+
+//Leer datos de usuario
 export const loadUser = (uid) => {
   return new Promise((resolve, reject) => {
     firebase.database()

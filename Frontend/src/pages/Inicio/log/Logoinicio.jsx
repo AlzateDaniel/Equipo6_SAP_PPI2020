@@ -1,6 +1,6 @@
 import React from "react";
-import "../../Estilos.css";
-import imagenes from "../../assets/imagenes";
+import "../../../Estilos.css";
+import imagenes from "../../../assets/imagenes";
 import Link from '@material-ui/core/Link';
 import { Link as RouterLink, withRouter } from 'react-router-dom';
 

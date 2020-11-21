@@ -15,7 +15,7 @@ import firebase from 'firebase/app';
 import 'firebase/database';
 import 'firebase/auth';
 
-import Alert from './Alert';
+import Alert from '../Alert';
 
 const MyLink = React.forwardRef((props, ref) => <RouterLink innerRef={ref} {...props} />);
 
@@ -44,9 +44,9 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const Login = (props) => {
+const Loginempleado = (props) => {
   const classes = useStyles();
-  const [user, setUser] = useState({
+  const [userempleado, setUserempleado] = useState({
     email: '',
     password: ''
   });
@@ -56,8 +56,8 @@ const Login = (props) => {
   const [alertMessage, setAlertMessage] = useState(null);
 
   const handleChange = (e) => {
-    setUser({
-      ...user,
+    setUserempleado({
+      ...userempleado,
       [e.target.name]: e.target.value
     });
   };
@@ -68,9 +68,9 @@ const Login = (props) => {
 
 
     //Login with email and password
-    firebase.auth().signInWithEmailAndPassword(user.email, user.password)
+    firebase.auth().signInWithEmailAndPassword(userempleado.email, userempleado.password)
     .then(response => {
-      props.history.push('/inicioPerfil');
+      props.history.push('/inicioEmpleado');
     })
     .catch(error => {
       console.log(error);
@@ -100,7 +100,7 @@ const Login = (props) => {
             name="email"
             autoComplete="email"
             autoFocus
-            defaultValue={user.email}
+            defaultValue={userempleado.email}
             onChange={handleChange}
           />
           <TextField
@@ -113,7 +113,7 @@ const Login = (props) => {
             type="password"
             id="password"
             autoComplete="current-password"
-            defaultValue={user.password}
+            defaultValue={userempleado.password}
             onChange={handleChange}
           />
           <Button
@@ -127,7 +127,7 @@ const Login = (props) => {
           </Button>
           <Grid container>
             <Grid item>
-              <Link to="/signup" component={MyLink} variant="body2">
+              <Link to="/signupEmpleado" component={MyLink} variant="body2">
                 {"¿No tienes una cuenta? Ingresa aqui"}
               </Link>
             </Grid>
@@ -147,4 +147,4 @@ const Login = (props) => {
     </Container>
   );
 };
-export default withRouter(Login);
+export default withRouter(Loginempleado);

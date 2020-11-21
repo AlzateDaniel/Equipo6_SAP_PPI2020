@@ -12,16 +12,15 @@ import { Link as RouterLink, withRouter } from 'react-router-dom';
 const MyLink = React.forwardRef((props, ref) => <RouterLink innerRef={ref} {...props} />);
 
 
-const Registro = () => {
+const Regempleado = () => {
   return (
     <div>
       <hr />
       <main>
         <p align="center" className="text-primary">
           {" "}
-          Esta es una aplicacion unicamente desarrollada para el corregimiento
-          de San Antonio de Prado y sus alrededores , por lo tanto si no eres de
-          esta ubicacion no te registres.{" "}
+          Registrate como Empleado y da el mejor servicio a tus clientes del corregimiento de 
+          San Antonio de Prado y sus alrededores.{" "}
         </p>
         <hr />
 
@@ -36,7 +35,7 @@ const Registro = () => {
           />
           <br />
           
-        <Link to="/signup"  component={MyLink}> 
+        <Link to="/signupEmpleado"  component={MyLink}> 
           <Button
             className="mr-3"
             variant="outlined"
@@ -46,7 +45,7 @@ const Registro = () => {
             <GoArrowRight size="17px"/> Registrarse </Button>
         </Link>
  
-          <Link to="/login"  component={MyLink}> 
+          <Link to="/loginEmpleado"  component={MyLink}> 
           <Button
             variant="outlined"
             color="primary"
@@ -60,4 +59,4 @@ const Registro = () => {
   );
 };
 
-export default withRouter (Registro);
+export default withRouter (Regempleado);
