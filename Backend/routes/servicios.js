@@ -1,10 +1,9 @@
 const { Router } = require('express');
-const router = Router();
+const servicios = Router();
 const mysqlConnection = require('../db/db');
 
-
 //1 Servicio
-router.get ('/servicios', (req,res) => {
+servicios.get ('/servicios', (req,res) => {
     mysqlConnection.query('SELECT * FROM servicios', (err, rows, fields) => {
             if (!err) {
                 res.json(rows);
@@ -19,11 +18,4 @@ router.get ('/servicios', (req,res) => {
 
 
 
-
-
-
-
-
-
-
-module.exports = router;
+module.exports = servicios;

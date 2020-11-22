@@ -9,7 +9,7 @@ const servicios = require('./routes/servicios');
 const citas = require('./routes/citas');
 
 const path = require('path');
-// Inicializamos express
+// Inicializamos expresss
 const app = express();
 
 
@@ -19,6 +19,12 @@ const multer = require('multer');
 const { uuid } = require('uuidv4');
 
 
+
+//Rutas
+app.use('/api', usuarios);
+app.use('/api', empleados);
+app.use('/api', servicios);
+app.use('/api', citas);
 
 
 // Middlewares
@@ -30,12 +36,6 @@ app.get('/', (req, res) => {
     res.send('Servidor BeautyServices corriendo');
 });
 
-
-//Rutas
-app.use('/api', usuarios);
-app.use('/api/empleados', empleados);
-app.use('/api/servicios', servicios);
-app.use('/api/citas', citas);
 
 
 
@@ -56,12 +56,8 @@ app.use(require('./routes/routes'));
 
 
 
-
-
-
-
 //Establecemos el puerto
-app.set('port', 4000);
+app.set('port', 4001);
 
 //Iniciamos el servidor
 app.listen(app.get('port'), () => {

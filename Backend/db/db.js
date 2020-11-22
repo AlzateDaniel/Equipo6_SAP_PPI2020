@@ -1,9 +1,9 @@
 const mysql = require('mysql');
 const mysqlConnection = mysql.createConnection({
-    host: 'localhost',
-    user: 'DanielAlzate',
-    password: '1001470183Dam',
-    database: 'beautyservices',
+    host: 'behurr77mquywjcfysqw-mysql.services.clever-cloud.com',
+    user: 'ut2u2zvctlvyy9yc',
+    password: 'KDOaFmrJJCL6KMy31lpb',
+    database: 'behurr77mquywjcfysqw',
     multipleStatements: true
 });
 
@@ -12,7 +12,7 @@ mysqlConnection.connect((error)=>{
         console.error(error);
         return;
     }else{
-        console.log('¡Conexion exitosa con base datos!')
+        console.log('Conexion exitosa con base datos')
     }
 })
 

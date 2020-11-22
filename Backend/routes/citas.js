@@ -1,10 +1,10 @@
 const { Router } = require('express');
-const router = Router();
+const citas = Router();
 const mysqlConnection = require('../db/db');
 
 
 //1 Servicio
-router.get ('/citas', (req,res) => {
+citas.get ('/citas', (req,res) => {
     mysqlConnection.query('SELECT * FROM citas', (err, rows, fields) => {
             if (!err) {
                 res.json(rows);
@@ -19,12 +19,4 @@ router.get ('/citas', (req,res) => {
 
 
 
-
-
-
-
-
-
-
-
-module.exports = router;
+module.exports = citas;
