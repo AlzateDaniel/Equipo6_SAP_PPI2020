@@ -17,13 +17,13 @@ usuarios.get ('/usuarios', (req,res) => {
 // 2 servicio
 // TABLA: Registro de usuario
 // OBJETIVO: Poder agregar un nuevo usuario y que se inserte en la base de datos
-usuarios.post('/nuevo-usuario', (req,res)=>{
-    const { nombre_completo,correo,contraseña,barrio,direccion,celular } = req.body;
-    const usuario = [ nombre_completo,correo,contraseña,barrio,direccion,celular ];
+usuarios.post('/nuevo-usuario', (require,res)=>{
+    const { nombre_completo,correo,contraseña,barrio,direccion,celular } = require.body
+    const usuarios = [nombre_completo,correo,contraseña,barrio,direccion,celular ];
 
     const nuevoUsuario = `INSERT INTO usuarios(nombre_completo,correo,contraseña,barrio,direccion,celular) VALUES (?,?,?,?,?,?)`;
 
-    mysqlConnection.query(nuevoUsuario, usuario, (err, results, fields)=>{
+    mysqlConnection.query(nuevoUsuario, usuarios, (err, results, fields)=>{
         if(err){
             return console.error(err.message);
         }else{
@@ -31,6 +31,9 @@ usuarios.post('/nuevo-usuario', (req,res)=>{
         }
     });
 });
+
+
+
 
 
 
