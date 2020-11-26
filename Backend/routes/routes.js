@@ -9,6 +9,7 @@ const { uuid } = require('uuidv4');
 const path = require('path');
 
 
+
 // Para que guarde los archivos en public y dentro en una carpeta llamada uploads
 const storage = multer.diskStorage({
     destination: path.join(__dirname, '../public/uploads'),
