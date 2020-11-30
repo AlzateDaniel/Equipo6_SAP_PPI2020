@@ -2,6 +2,9 @@
 
 const express = require('express');
 const bodyParser = require('body-parser')
+const morgan = require('morgan');
+// Inicializamos expresss
+const app = express();
 
 //Importaciones de las tablas
 const usuarios = require('./routes/usuarios');
@@ -10,8 +13,6 @@ const servicios = require('./routes/servicios');
 const citas = require('./routes/citas');
 
 const path = require('path');
-// Inicializamos expresss
-const app = express();
 
 // Para subir archivos
 const multer = require('multer');
@@ -30,6 +31,8 @@ app.use('/api', citas);
 
 // Middlewares
 app.use(express.json());
+app.use(morgan('dev'));
+
 
 //Servidor
 app.get('/', (req, res) => {

@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-import { withRouter } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
@@ -15,8 +14,12 @@ import 'firebase/auth';
 import NewMessage from './NewMessage';
 import CustomAvatar from '../CustomAvatar';
 import { loadUser } from '../../utils/dbUtils';
+import { Button } from "reactstrap";
 
-import Header from '../layout/Header';
+import Link from '@material-ui/core/Link';
+import { Link as RouterLink, withRouter } from 'react-router-dom';
+
+const MyLink = React.forwardRef((props, ref) => <RouterLink innerRef={ref} {...props} />);
 
 const useStyles = makeStyles(theme => ({
   text: {
@@ -33,7 +36,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const Chat = ({ history } ) => {
+const Chat = ({ history, props } ) => {
   const classes = useStyles();
   const [messages, setMessages] = useState([]);
 
@@ -86,6 +89,7 @@ const Chat = ({ history } ) => {
             <ListItem button key={date}>
               <ListItemAvatar>
                 <CustomAvatar name={user.name} avatar={user.avatar} size="md" />
+                
               </ListItemAvatar>
               <ListItemText primary={user ? user.name : 'anonymous'} secondary={message} />
             </ListItem>
@@ -93,6 +97,16 @@ const Chat = ({ history } ) => {
         </List>
       </Paper>
       <NewMessage />
+      <br/>
+      <div align="center">
+      <Link to="/inicioEmpleado"  component={MyLink} > 
+       <Button 
+          color="primary"
+       >
+          Inicio
+       </Button>
+      </Link>
+      </div>
     </Container>
   );
 };

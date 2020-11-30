@@ -70,7 +70,7 @@ const Loginempleado = (props) => {
     //Login with email and password
     firebase.auth().signInWithEmailAndPassword(userempleado.email, userempleado.password)
     .then(response => {
-      props.history.push('/inicioEmpleado');
+      props.history.push('/');
     })
     .catch(error => {
       console.log(error);
@@ -87,7 +87,7 @@ const Loginempleado = (props) => {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          Ingresar a BeautyServices
+          Ingresa a BeautyServices
         </Typography>
         <form className={classes.form} onSubmit={handleLogin}>
           <TextField
